@@ -1,0 +1,104 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>HTML5フォームのサンプル</title>
+<style>
+button {
+  display: inline-block;
+  padding: .2em 1.5em;
+  color: #000;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 #999;
+  cursor: default;
+
+  background-image: -webkit-linear-gradient(#f6f6f6, #e3e3e3);
+  background-image: -moz-linear-gradient(#f6f6f6, #e3e3e3);
+  background-image: -ms-linear-gradient(#f6f6f6, #e3e3e3);
+  background-image: -o-linear-gradient(#f6f6f6, #e3e3e3);
+}
+
+button::selection {
+  color: inherit;
+  background-color: transparent;
+}
+
+button:active {
+  background-color: #ddd;
+  box-shadow: inset 0 1px 2px #ccc;
+
+  background-image: -webkit-linear-gradient(#ddd, #e3e3e3);
+  background-image: -moz-linear-gradient(#ddd, #e3e3e3);
+  background-image: -ms-linear-gradient(#ddd, #e3e3e3);
+  background-image: -o-linear-gradient(#ddd, #e3e3e3);
+
+  padding: -moz-calc(0.2em + 1px) 1.5em calc(0.2em - 1px);
+  padding: calc(0.2em + 1px) 1.5em calc(0.2em - 1px);
+}
+</style>
+<style>
+body {
+  font-size: 13px;
+  font-family: sans-serif;
+  padding: 1em 2em;
+}
+
+input, textarea {
+  border: 1px solid #ccc;
+  padding: 4px;
+}
+
+form p { margin: 10px 0 }
+
+.required {
+  font-weight: bold;
+  color: #c54;
+  font-size: smaller;
+}
+
+input[required]:valid {
+  background: url(accept.png) 98% 50% no-repeat;
+}
+input[required]:invalid {
+  background: url(exclamation.png) 98% 50% no-repeat;
+}
+
+#name input { width: 210px }
+#email input { width: 210px }
+#tel input { width: 120px }
+#address textarea { width: 240px }
+
+button {
+  margin-top: 1em;
+  font-family: sans-serif;
+}
+
+#sample {
+  border: 1px solid #eee;
+  margin: 2em 0;
+  padding: 1em;
+  width: 260px;
+  border-radius: 5px;
+}
+#sample h2 { margin: 0 0 .6em }
+</style>
+
+<body>
+<form id=sample>
+<h2>なにかの登録フォーム</h2>
+<div id=formcontent>
+<p id=name><label for=i-name>名前 <strong class=required>(必須)</strong></label><br><input required id=i-name>
+<p id=email><label for=i-email>メールアドレス <strong class=required>(必須)</strong></label><br><input type=email required id=i-email>
+<p id=tel><label for=i-tel>電話番号</label><br><input type=tel id=i=tel>
+<p id=address><label for=i-address>住所</label><br><textarea id=i-address rows=3></textarea>
+</div>
+<p><button>この内容で登録する</button>
+</form>
+
+<script>
+var form = document.getElementById('sample');
+var cont = document.getElementById('formcontent');
+
+window.addEventListener('submit', console.log('submit!'), false);
+
+</script>
