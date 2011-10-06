@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Web Fontsの簡単なサンプル (style要素から)</title>
+<style>
+@font-face {
+  font-family: mplus;
+  src: url(mplus-2p-regular.ttf);
+}
+.webfonts {
+  font-size: 200%;
+  font-family: mplus;
+}
+figcaption:before {
+  content: "―";
+}
+</style>
+<h1>Web Fontsのサンプル</h1>
+<figure>
+<blockquote class=webfonts>自己嫌悪がないということは、その人が自己を熱愛することのない証拠である。自己に冷淡であるからだ。</blockquote>
+<figcaption>志賀直哉</figcaption>
+</figure>
