@@ -42,7 +42,6 @@ body {
   font-family: sans-serif;
   padding: 1em 2em;
 }
-
 input, textarea {
   border: 1px solid #ccc;
   padding: 4px;
@@ -74,10 +73,9 @@ button {
 }
 
 #sample {
-  border: 1px solid #eee;
   margin: 2em 0;
   padding: 1em;
-  width: 260px;
+  width: 320px;
   border-radius: 5px;
 }
 #sample h2 { margin: 0 0 .6em }
@@ -86,11 +84,18 @@ button {
 <body>
 <form id=sample>
 <h2>なにかの登録フォーム</h2>
-<div id=formcontent>
 <p id=name><label for=i-name>名前 <strong class=required>(必須)</strong></label><br><input required id=i-name>
 <p id=email><label for=i-email>メールアドレス <strong class=required>(必須)</strong></label><br><input type=email required id=i-email>
-<p id=tel><label for=i-tel>電話番号</label><br><input type=tel id=i=tel>
-<p id=address><label for=i-address>住所</label><br><textarea id=i-address rows=3></textarea>
-</div>
 <p><button>この内容で登録する</button>
 </form>
+
+<script>
+var form = document.getElementById('sample');
+window.addEventListener('submit', success, false);
+function success(e) {
+  e.preventDefault();
+  var name = document.getElementById('i-name').value;
+  var text = "<h2>ご登録ありがとうございます。</h2><p>ご記入いただいたメールアドレスに " + name + " さまの会員情報を送信しました。</p>";
+  form.innerHTML = text;
+}
+</script>
