@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<meta charset=UTF-8>
+<title>CSS Google +1 Buttons</title>
+<style>
+
+/* default state */
+.small, .standard, .medium, .tall {
+  display: inline-block;
+  box-sizing: border-box;
+ -moz-box-sizing: border-box; /* http://bugzil.la/243412 */
+  font-weight: bold;
+  font-style: italic;
+  font-family: Arial;
+  text-align: center;
+  color: #166aee;
+  cursor: default;
+  border: 1px solid #b3b3b3;
+  border-radius: 2.5px;
+  background-color: #f4f4f4;
+  background-image: -webkit-linear-gradient(#d7d7d7 1px, #f9f9f9 1px, #ddd);
+  background-image: -moz-linear-gradient(#d7d7d7 1px, #f9f9f9 1px, #ddd);
+  background-image: -ms-linear-gradient(#d7d7d7 1px, #f9f9f9 1px, #ddd);
+  background-image: -o-linear-gradient(#d7d7d7 1px, #f9f9f9 1px, #ddd);
+  background-position: 0 2px;
+  position: relative;
+}
+.small {
+  background-position: 0 1px;
+}
+
+/* stripe */
+.small:before, .standard:before, .medium:before, .tall:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  height: 3px;
+  border-radius: 2px 2px 0 0;
+  background-image: -webkit-linear-gradient(0deg, #e32c3b 25%, #148ee3 25%, #148ee3 50%, #36c520 50%, #36c520 75%, #ffca27 75%);
+  background-image: -moz-linear-gradient(0deg, #e32c3b 25%, #148ee3 25%, #148ee3 50%, #36c520 50%, #36c520 75%, #ffca27 75%);
+  background-image: -ms-linear-gradient(0deg, #e32c3b 25%, #148ee3 25%, #148ee3 50%, #36c520 50%, #36c520 75%, #ffca27 75%);
+  background-image: -o-linear-gradient(0deg, #e32c3b 25%, #148ee3 25%, #148ee3 50%, #36c520 50%, #36c520 75%, #ffca27 75%);
+}
+.small:before {
+  height: 2px;
+}
+
+/* for those who want a pixel perfect buttons, add .pxp */
+.small.pxp:before {
+  background-image: -webkit-linear-gradient(0deg, #e32c3b 6px, #148ee3 6px, #148ee3 12px, #36c520 12px, #36c520 18px, #ffca27 18px);
+  background-image: -moz-linear-gradient(0deg, #e32c3b 6px, #148ee3 6px, #148ee3 12px, #36c520 12px, #36c520 18px, #ffca27 18px);
+  background-image: -ms-linear-gradient(0deg, #e32c3b 6px, #148ee3 6px, #148ee3 12px, #36c520 12px, #36c520 18px, #ffca27 18px);
+  background-image: -o-linear-gradient(0deg, #e32c3b 6px, #148ee3 6px, #148ee3 12px, #36c520 12px, #36c520 18px, #ffca27 18px);
+}
+.standard.pxp:before {
+  background-image: -webkit-linear-gradient(0deg, #e32c3b 9px, #148ee3 9px, #148ee3 19px, #36c520 19px, #36c520 29px, #ffca27 29px);
+  background-image: -moz-linear-gradient(0deg, #e32c3b 9px, #148ee3 9px, #148ee3 19px, #36c520 19px, #36c520 29px, #ffca27 29px);
+  background-image: -ms-linear-gradient(0deg, #e32c3b 9px, #148ee3 9px, #148ee3 19px, #36c520 19px, #36c520 29px, #ffca27 29px);
+  background-image: -o-linear-gradient(0deg, #e32c3b 9px, #148ee3 9px, #148ee3 19px, #36c520 19px, #36c520 29px, #ffca27 29px);
+}
+.medium.pxp:before {
+  background-image: -webkit-linear-gradient(0deg, #e32c3b 8px, #148ee3 8px, #148ee3 16px, #36c520 16px, #36c520 24px, #ffca27 24px);
+  background-image: -moz-linear-gradient(0deg, #e32c3b 8px, #148ee3 8px, #148ee3 16px, #36c520 16px, #36c520 24px, #ffca27 24px);
+  background-image: -ms-linear-gradient(0deg, #e32c3b 8px, #148ee3 8px, #148ee3 16px, #36c520 16px, #36c520 24px, #ffca27 24px);
+  background-image: -o-linear-gradient(0deg, #e32c3b 8px, #148ee3 8px, #148ee3 16px, #36c520 16px, #36c520 24px, #ffca27 24px);
+}
+.tall.pxp:before {
+  background-image: -webkit-linear-gradient(0deg, #e32c3b 13px, #148ee3 13px, #148ee3 25px, #36c520 25px, #36c520 37px, #ffca27 37px);
+  background-image: -moz-linear-gradient(0deg, #e32c3b 13px, #148ee3 13px, #148ee3 25px, #36c520 25px, #36c520 37px, #ffca27 37px);
+  background-image: -ms-linear-gradient(0deg, #e32c3b 13px, #148ee3 13px, #148ee3 25px, #36c520 25px, #36c520 37px, #ffca27 37px);
+  background-image: -o-linear-gradient(0deg, #e32c3b 13px, #148ee3 13px, #148ee3 25px, #36c520 25px, #36c520 37px, #ffca27 37px);
+}
+
+/* default on hover */
+.small:hover, .standard:hover, .medium:hover, .tall:hover {
+  border-color: #999;
+}
+
+/* default on push */
+.small:active, .standard:active, .medium:active, .tall:active {
+  border-color: #b3b3b3;
+  background-color: #e1e1e1;
+  background-image: -webkit-linear-gradient(#d7d7d7 1px, #dbdbdb 1px, #f7f7f7);
+  background-image: -moz-linear-gradient(#d7d7d7 1px, #dbdbdb 1px, #f7f7f7);
+  background-image: -ms-linear-gradient(#d7d7d7 1px, #dbdbdb 1px, #f7f7f7);
+  background-image: -o-linear-gradient(#d7d7d7 1px, #dbdbdb 1px, #f7f7f7);
+}
+
+/* +1'd */
+.\+1d, .\+1d:hover {
+  border-color: #004c8f;
+  color: #fff;
+  text-shadow: 1px 0 1px #1c4e76;
+  background-color: #007fe5;
+  background-image: -webkit-linear-gradient(#007be0 1px, #0085ef 1px, #005cae);
+  background-image: -moz-linear-gradient(#007be0 1px, #0085ef 1px, #005cae);
+  background-image: -ms-linear-gradient(#007be0 1px, #0085ef 1px, #005cae);
+  background-image: -o-linear-gradient(#007be0 1px, #0085ef 1px, #005cae);
+}
+
+/* +1'd on push */
+.\+1d:active {
+  background-color: #0065bc;
+  background-image: -webkit-linear-gradient(#005cae 1px, #0085ef);
+  background-image: -moz-linear-gradient(#005cae 1px, #0085ef);
+  background-image: -ms-linear-gradient(#005cae 1px, #0085ef);
+  background-image: -o-linear-gradient(#005cae 1px, #0085ef);
+}
+
+/* error */
+.error, .error:hover, .error:active {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  border-color: #820000;
+  background-color: #d80000;
+  background-image: -webkit-linear-gradient(#bc0000 1px, #f90000 1px, #b20000);
+  background-image: -moz-linear-gradient(#bc0000 1px, #f90000 1px, #b20000);
+  background-image: -ms-linear-gradient(#bc0000 1px, #f90000 1px, #b20000);
+  background-image: -o-linear-gradient(#bc0000 1px, #f90000 1px, #b20000);
+}
+.small.error {
+  font-weight: bold;
+}
+
+/* small button */
+.small {
+  height: 15px;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 15px;
+}
+.small, .small:before {
+  width: 24px;
+}
+
+/* standard button */
+.standard {
+  height: 24px;
+  font-size: 15px;
+  line-height: 25px;
+}
+.standard, .standard:before {
+  width: 38px;
+}
+
+/* medium and tall buttons */
+.medium, .tall {
+  height: 20px;
+  font-size: 13px;
+  line-height: 22px;
+}
+.medium, .medium:before {
+  width: 32px;
+}
+.tall, .tall:before {
+  width: 50px;
+}
+
+</style>
+<style>
+.standard + .count {
+  display: inline-block;
+  box-sizing: border-box;
+ -moz-box-sizing: border-box; /* http://bugzil.la/243412 */
+  font-family: Arial;
+  text-align: center;
+  color: rgb(102,102,102);
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
+  background-color: #fff;
+  position: relative;
+  max-width:57px;
+  max-height:24px;
+  font-size: 13px;
+  padding: 6px;
+  margin-left: 4px;
+}
+.standard + .count:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border:solid #ccc;
+  border-width: 0 0 1px 1px;
+  position:absolute;
+  left: -4px;
+  top: 7px;
+  background-color:#fff;
+ -webkit-transform:rotate(45deg);
+ -moz-transform:rotate(45deg);
+ -ms-transform:rotate(45deg);
+ -o-transform:rotate(45deg);
+}
+</style>
+
+<h1>CSS Google +1 Buttons</h1>
+
+<h2>small:</h2>
+<span class="small">+1</span>
+<span class="small +1d">+1</span>
+<span class="small error">!</span>
+
+<h2>medium:</h2>
+<span class="medium">+1</span>
+<span class="medium +1d">+1</span>
+<span class="medium error">!</span>
+
+<h2>tall:</h2>
+<span class="tall">+1</span>
+<span class="tall +1d">+1</span>
+<span class="tall error">!</span>
+
+<h2>standard:</h2>
+<span class="standard">+1</span>
+<span class="standard +1d">+1</span>
+<span class="standard error">!</span>
+<span class="count">38.8k</span>
