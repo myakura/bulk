@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>SVG referencing modes</title>
+<style>
+table { border-collapse: collapse; }
+th { font-family: monospace; line-height: 2; }
+object, img, div { vertical-align: bottom; }
+</style>
+
+<h1>SVG referencing modes</h1>
+
+<p>France or Italy?
+
+<table border>
+<tr><td>
+<th>&lt;?xml-stylesheet ?>
+<th>&lt;svg:style>
+<th>&lt;html:link>
+<tr><th>&lt;object>
+<td><object data=tricolour_pi.svg></object>
+<td><object data=tricolour_svgstyle.svg></object>
+<td><object data=tricolour_htmllink.svg></object>
+<tr><th>&lt;img></th>
+<td><img src=tricolour_pi.svg>
+<td><img src=tricolour_svgstyle.svg>
+<td><img src=tricolour_htmllink.svg>
+<tr><th>background-image<td>
+<div style="width: 270px; height: 180px; background-image: url(tricolour_pi.svg)"></div>
+<td><div style="width: 270px; height: 180px; background-image: url(tricolour_svgstyle.svg)"></div>
+<td><div style="width: 270px; height: 180px; background-image: url(tricolour_htmllink.svg)"></div>
+</table>
