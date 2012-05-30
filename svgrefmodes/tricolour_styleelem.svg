@@ -3,5 +3,8 @@
   <rect x="0" y="0" width="90" height="180" style="fill: #33b"></rect>
   <rect x="90" y="0" width="90" height="180" style="fill: #fff"></rect>
   <rect x="180" y="0" width="90" height="180" style="fill: #d33"></rect>
-  <style><![CDATA[@import url(italy.css);]]></style>
+  <style><![CDATA[
+    rect:first-child { fill: #084 !important }
+    rect:last-child { fill: #b22 !important }
+  ]]></style>
 </svg>
