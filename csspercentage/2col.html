@@ -1,0 +1,87 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>CSSのパーセンテージのデモ: 伸縮するカラムレイアウト</title>
+<style>
+@font-face {
+  font-family: mplus2p; 
+  src: url(fonts/mplus-2p-regular.ttf);
+}
+@font-face {
+  font-family: mplus2p;
+  src: url(fonts/mplus-2p-bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: mplus1c;
+  src: url(fonts/mplus-1c-regular.ttf);
+}
+@font-face {
+  font-family: mplus1c;
+  src: url(fonts/mplus-1c-bold.ttf);
+  font-weight: bold;
+}
+</style>
+<style>
+html {
+	font-family: mplus2p;
+	font-size: 16px;
+}
+body {
+	margin: 0;
+	padding: 10px 15px;
+	font-size: 150%;
+}
+pre, code {
+	font-family: mplus1c;
+}
+h1 {
+	font-size: 130%;
+}
+
+.wrap {
+	margin: 1em auto;
+	max-width: 960px;
+}
+
+.primary, .secondary {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 4em;
+	padding: 10px;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.primary {
+	width: 75%;
+	background-color: #333;
+	float: left;
+}
+.secondary {
+	width: 21.875%;
+	background-color: #666;
+	float: right;
+}
+
+.wrap.inflexible {
+	// チート ;
+	width: 960px;
+}
+
+.wrap:after { content: ""; display: block; clear: both }
+</style>
+<body>
+<section>
+<h1>幅 960px, メイン 720px, サブ 210px</h1>
+<div class="wrap inflexible">
+<div class="primary">width: 720px</div>
+<div class="secondary">width: 210px</div>
+</div>
+</section>
+<section>
+<h1>上のフレキシブル版</h1>
+<div class="wrap">
+<div class="primary">width: <strong>75%</strong></div>
+<div class="secondary">width: <strong>21.875%</strong></div>
+</div>
+</section>

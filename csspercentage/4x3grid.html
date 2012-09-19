@@ -1,0 +1,85 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>CSSのパーセンテージのデモ: グリッドちっく</title>
+<style>
+@font-face {
+  font-family: mplus2p; 
+  src: url(fonts/mplus-2p-regular.ttf);
+}
+@font-face {
+  font-family: mplus2p;
+  src: url(fonts/mplus-2p-bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: mplus1c;
+  src: url(fonts/mplus-1c-regular.ttf);
+}
+@font-face {
+  font-family: mplus1c;
+  src: url(fonts/mplus-1c-bold.ttf);
+  font-weight: bold;
+}
+</style>
+<style>
+html {
+	font-family: mplus2p;
+	font-size: 16px;
+}
+body {
+	margin: 0;
+	padding: 10px 15px;
+	font-size: 150%;
+}
+pre, code {
+	font-family: mplus1c;
+}
+h1 {
+	font-size: 130%;
+}
+
+.wrap {
+	margin: 1em auto;
+	max-width: 780px;
+	height: 580px;
+}
+
+.block {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 5% 3%;
+	color: #fff;
+	background-color: #333;
+	border-radius: 4px;
+	width: 23.076923076923%;
+	margin-bottom: 2.56410256410%;
+	margin-right: 2.56410256410%;
+	float: left;
+}
+.block:nth-child(4n) {
+	margin-right: 0;
+}
+.block:nth-child(9),
+.block:nth-child(10),
+.block:nth-child(11),
+.block:nth-child(12) {
+	margin-bottom: 0;
+}
+
+.wrap:after { content: ""; display: block; clear: both }
+</style>
+<body>
+<div class="wrap">
+<div class="block">1</div>
+<div class="block">2</div>
+<div class="block">3</div>
+<div class="block">4</div>
+<div class="block">5</div>
+<div class="block">6</div>
+<div class="block">7</div>
+<div class="block">8</div>
+<div class="block">9</div>
+<div class="block">10</div>
+<div class="block">11</div>
+<div class="block">12</div>
+</div>
